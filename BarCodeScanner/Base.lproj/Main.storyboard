@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m7I-kE-xB2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scan Barcode-->
+        <scene sceneID="ebs-fc-HJs">
+            <objects>
+                <viewController title="Scan Barcode" id="m7I-kE-xB2" customClass="BarCodeViewController" customModule="BarCodeScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r84-fu-cVS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1i-EL-UhJ" userLabel="No Camera Access View">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tt1-gu-DyG" userLabel="No Camera Text View">
+                                        <rect key="frame" x="20" y="216.5" width="335" height="150"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow access to your camera to scan the barcode." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79X-kz-kh1">
+                                                <rect key="frame" x="20" y="20" width="295" height="41"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="ENABLE_CAMERA_HELP_TEXT"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgr-Is-5eH">
+                                                <rect key="frame" x="20" y="97" width="295" height="33"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="ENABLE_CAMERA_ACCESS_BUTTON"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="Enable Camera Access"/>
+                                                <connections>
+                                                    <action selector="enableCameraAccess:" destination="m7I-kE-xB2" eventType="touchUpInside" id="TIt-IG-9CZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="79X-kz-kh1" firstAttribute="leading" secondItem="Tt1-gu-DyG" secondAttribute="leading" constant="20" id="FiI-Qv-lVj"/>
+                                            <constraint firstAttribute="trailing" secondItem="79X-kz-kh1" secondAttribute="trailing" constant="20" id="R5D-zU-Oew"/>
+                                            <constraint firstItem="79X-kz-kh1" firstAttribute="top" secondItem="Tt1-gu-DyG" secondAttribute="top" constant="20" id="RvQ-ML-i8D"/>
+                                            <constraint firstAttribute="height" constant="150" id="U6V-zb-E2r"/>
+                                            <constraint firstAttribute="trailing" secondItem="rgr-Is-5eH" secondAttribute="trailing" constant="20" id="fb9-Tm-U25"/>
+                                            <constraint firstAttribute="bottom" secondItem="rgr-Is-5eH" secondAttribute="bottom" constant="20" id="nFd-yY-TNJ"/>
+                                            <constraint firstItem="rgr-Is-5eH" firstAttribute="leading" secondItem="Tt1-gu-DyG" secondAttribute="leading" constant="20" id="sSU-2k-vXC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="NO_CAMERA_ACCESS_VIEW">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstItem="Tt1-gu-DyG" firstAttribute="leading" secondItem="L1i-EL-UhJ" secondAttribute="leading" constant="20" id="L7B-1x-OOx"/>
+                                    <constraint firstItem="Tt1-gu-DyG" firstAttribute="centerY" secondItem="L1i-EL-UhJ" secondAttribute="centerY" id="dxx-O4-wgA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tt1-gu-DyG" secondAttribute="trailing" constant="20" id="qMA-yv-RUM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yew-Md-7bY" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-WF-Bjv">
+                                        <rect key="frame" x="129" y="12" width="117" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.66274509803921566" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bAP-WF-Bjv" firstAttribute="centerX" secondItem="Yew-Md-7bY" secondAttribute="centerX" id="3lz-sr-t0b"/>
+                                    <constraint firstItem="bAP-WF-Bjv" firstAttribute="top" secondItem="Yew-Md-7bY" secondAttribute="top" constant="12" id="GQo-v3-QGk"/>
+                                    <constraint firstAttribute="height" constant="64" id="ckU-vz-olT"/>
+                                    <constraint firstAttribute="bottom" secondItem="bAP-WF-Bjv" secondAttribute="bottom" constant="12" id="eq0-xm-Liy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5y-ZR-nJp" userLabel="Scanner View">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <subviews>
+                                    <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="642-Hc-BAT" userLabel="Searchview">
+                                        <rect key="frame" x="87.5" y="261.5" width="200" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6y-QD-kTt">
+                                                <rect key="frame" x="50.5" y="19.5" width="99.5" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="0M1-km-OcQ"/>
+                                            <constraint firstItem="E6y-QD-kTt" firstAttribute="centerY" secondItem="642-Hc-BAT" secondAttribute="centerY" id="1Pf-8E-LPp"/>
+                                            <constraint firstItem="E6y-QD-kTt" firstAttribute="centerX" secondItem="642-Hc-BAT" secondAttribute="centerX" id="dcJ-FG-CvX"/>
+                                            <constraint firstAttribute="height" constant="60" id="w7w-D7-6EJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="BARCODE_SCANNER_VIEW">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstItem="642-Hc-BAT" firstAttribute="centerX" secondItem="h5y-ZR-nJp" secondAttribute="centerX" id="9KM-J8-4Ai"/>
+                                    <constraint firstItem="642-Hc-BAT" firstAttribute="centerY" secondItem="h5y-ZR-nJp" secondAttribute="centerY" id="OWC-HL-aZu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.66274509803921566" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="h5y-ZR-nJp" secondAttribute="bottom" id="4ES-95-4QT"/>
+                            <constraint firstItem="L1i-EL-UhJ" firstAttribute="top" secondItem="Yew-Md-7bY" secondAttribute="bottom" id="4pY-jX-aSF"/>
+                            <constraint firstItem="eSm-vj-of2" firstAttribute="trailing" secondItem="h5y-ZR-nJp" secondAttribute="trailing" id="TEI-Zz-d4B"/>
+                            <constraint firstItem="h5y-ZR-nJp" firstAttribute="top" secondItem="Yew-Md-7bY" secondAttribute="bottom" id="bzt-Sj-Z0h"/>
+                            <constraint firstItem="L1i-EL-UhJ" firstAttribute="leading" secondItem="eSm-vj-of2" secondAttribute="leading" id="fAM-QE-P24"/>
+                            <constraint firstItem="eSm-vj-of2" firstAttribute="trailing" secondItem="L1i-EL-UhJ" secondAttribute="trailing" id="gFl-ML-U7F"/>
+                            <constraint firstItem="eSm-vj-of2" firstAttribute="trailing" secondItem="Yew-Md-7bY" secondAttribute="trailing" id="grd-wK-dyu"/>
+                            <constraint firstItem="h5y-ZR-nJp" firstAttribute="leading" secondItem="eSm-vj-of2" secondAttribute="leading" id="kRG-wP-nXt"/>
+                            <constraint firstItem="Yew-Md-7bY" firstAttribute="top" secondItem="r84-fu-cVS" secondAttribute="topMargin" id="uSV-cX-q2Z"/>
+                            <constraint firstItem="eSm-vj-of2" firstAttribute="bottom" secondItem="L1i-EL-UhJ" secondAttribute="bottom" id="v6J-10-AOu"/>
+                            <constraint firstItem="Yew-Md-7bY" firstAttribute="leading" secondItem="eSm-vj-of2" secondAttribute="leading" id="wpk-pK-WTN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eSm-vj-of2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scan Barcode" id="ZDm-to-peY"/>
+                    <connections>
+                        <outlet property="noCameraAccessView" destination="L1i-EL-UhJ" id="t3g-4a-Ryt"/>
+                        <outlet property="scannerView" destination="h5y-ZR-nJp" id="gLq-yY-NmX"/>
+                        <outlet property="searchTextView" destination="642-Hc-BAT" id="Mpl-m7-4UW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHZ-TO-eAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1956" y="164.16791604197903"/>
+        </scene>
+    </scenes>
+</document>
